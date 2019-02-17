@@ -4,18 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Raleway", sans-serif;
+        height: 100%;
+        background: url(smack.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        
       }
-
-      button {
-        background-color: #031804;
-        border: none;
-        color: white;
-        padding: 15px 25px;
-        text-align: center;
-        font-size: 16px;
-        cursor: pointer;
-      }
+    
+     
 
       /* The Modal (background) */
       .modal {
@@ -39,7 +38,7 @@
         margin: auto;
         padding: 0;
         border: 1px solid #888;
-        width: 80%;
+        width: 50%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -webkit-animation-name: animatetop;
@@ -88,7 +87,7 @@
 
       .modal-header {
         padding: 2px 16px;
-        background-color: #5cb85c;
+        background-color: #000;
         color: white;
       }
 
@@ -98,59 +97,182 @@
 
       .modal-footer {
         padding: 2px 16px;
-        background-color: #5cb85c;
+        background-color: #000;
         color: white;
+        height: 30px;
+        
       }
+
+
+      button {
+        background-color: #000000;
+        border: none;
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 15px;
+      }
+      input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
     </style>
   </head>
   <body>
-    <h2>Animated Modal with Header and Footer</h2>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
+    <div class="button-setup">
+      <button class="my-btn" data-modal="myModal1">Menu</button>
+      <br />
+      <button class="my-btn" data-modal="myModal2">Contact</button>
+    </div>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <!-- The Modal 1 -->
+    <div id="myModal1" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
         <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Modal Header</h2>
+          <span class="close">×</span>
+          <h2>Menu Items</h2>
         </div>
         <div class="modal-body">
-          <p>Some text in the Modal Body</p>
-          <p>Some other text...</p>
+          <p>Chili Lime Fish and Chips <b>7.50</b></p>
+          <p>Tsunami Fries <b>9.00</b></p>
+          <p>Pizza Fries <b>7.50</b></p>
+          <p>Steak and Cheese Fries <b>8.50</b></p>
         </div>
-        <div class="modal-footer">
-          <h3>Modal Footer</h3>
-        </div>
+        <div class="modal-header"><h2>Desserts</h2></div>
+        <p>Red Velvet Cake <b>4.00</b></p>
+        <p>Chocolate Moouse Cake <b>4.00</b></p>
+        <p>Carrot Cake <b>4.00</b></p>
+        <p>Vanilla Cream Cake <b>4.00</b></p>
+        <div class="modal-footer"></div>
       </div>
     </div>
 
+    <!-- The Modal 2 -->
+    <div id="myModal2" class="modal">
+      <!-- Modal content 2 -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+          <h2>Contact</h2>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <form action="/action_page.php">
+                <div class="row">
+                  <div class="col-25">
+                    <label for="fname">First Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="lname">Last Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="country">Country</label>
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="subject">Subject</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <input type="submit" value="Submit">
+                </div>
+                </form>
+              </div>
+                </div>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+<!-- srcipt for modal functions -->
     <script>
-      // Get the modal
-      var modal = document.getElementById("myModal");
+      $(".my-btn").on("click", function() {
+        $("#" + $(this).data("modal")).css("display", "block");
+      });
 
-      // Get the button that opens the modal
-      var btn = document.getElementById("myBtn");
+      $(".close").on("click", function() {
+        $(".modal").hide();
+      });
 
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks the button, open the modal
-      btn.onclick = function() {
-        modal.style.display = "block";
-      };
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      };
-
-      // When the user clicks anywhere outside of the modal, close it
+      // When the user clicks anywhere outside of the modal, close it //
       window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+        if (event.target.className == "modal") {
+          $(".modal").hide();
         }
       };
     </script>
